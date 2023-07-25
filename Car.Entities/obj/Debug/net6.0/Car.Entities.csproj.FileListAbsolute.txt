@@ -1,0 +1,15 @@
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\bin\Debug\net6.0\Car.Entities.deps.json
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\bin\Debug\net6.0\Car.Entities.dll
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\bin\Debug\net6.0\Car.Entities.pdb
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\bin\Debug\net6.0\Core.dll
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\bin\Debug\net6.0\Core.pdb
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\Car.Entities.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\Car.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\Car.Entities.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\Car.Entities.AssemblyInfo.cs
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\Car.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\Car.Entities.csproj.CopyComplete
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\Car.Entities.dll
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\refint\Car.Entities.dll
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\Car.Entities.pdb
+C:\Users\Asus\source\repos\Car-MiniProject\Car.Entities\obj\Debug\net6.0\ref\Car.Entities.dll
