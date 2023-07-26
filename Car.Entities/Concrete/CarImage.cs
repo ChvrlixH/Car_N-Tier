@@ -1,17 +1,13 @@
-﻿using Core.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RentACar.Entities.Concrete.Common;
 
-namespace Car.Entities.Concrete
+namespace RentACar.Entities.Concrete
 {
-    public class CarImage : BaseEntity
+    public class CarImage : BaseAuditableEntity
     {
-        public string MainImage { get; set; }
-        public string Images { get; set; }
+        public int CarId { get; set; }
+        public Car Car { get; set; }
         public int ImageId { get; set; }
         public Image Image { get; set; }
+        public bool IsMain { get; set; }
     }
 }

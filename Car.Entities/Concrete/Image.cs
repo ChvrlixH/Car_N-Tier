@@ -1,14 +1,9 @@
-﻿using Core.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RentACar.Entities.Concrete.Common;
 
-namespace Car.Entities.Concrete
+namespace RentACar.Entities.Concrete
 {
     public class Image : BaseEntity
     {
-        public ICollection<CarImage> CarImages { get; set;}
+        public string path { get; set; }
     }
 }

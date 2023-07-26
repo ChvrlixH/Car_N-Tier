@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Common
+namespace Core.Utilities.Entities.Abstract
 {
-    public abstract class BaseEntity
+    public interface IEntity
     {
-        public int Id { get; set; }
     }
 }
