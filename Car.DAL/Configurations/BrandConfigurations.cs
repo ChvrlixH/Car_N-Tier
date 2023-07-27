@@ -7,6 +7,10 @@ namespace RentACar.DAL.Configurations
         {
             builder.Property(p => p.Name).HasMaxLength(90).IsRequired();
             builder.HasIndex(p => p.Name).IsUnique();
+
+            builder.HasMany(c => c.Cars)
+               .WithOne(p => p.Brand)
+               .HasForeignKey(p => p.BrandId);
         }
     }
 }

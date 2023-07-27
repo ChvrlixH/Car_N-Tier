@@ -9,6 +9,7 @@ namespace RentACar.Entities.Concrete
             Cars = new List<Car>();
         }
         public string Name { get; set; }
+        public bool IsDeleted { get; set; }
         public List<Car> Cars { get; set; }
 
     }

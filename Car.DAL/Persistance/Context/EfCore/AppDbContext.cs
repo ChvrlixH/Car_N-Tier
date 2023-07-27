@@ -1,17 +1,28 @@
-﻿using System.Reflection;
+﻿using RentACar.DAL.Persistance.Interceptors;
+using System.Reflection;
 
 
 namespace RentACar.DAL.Persistance.Context.EfCore
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        private readonly BaseAuditableEntityInterceptor _baseAuditableEntityInterceptor;
+        public AppDbContext(DbContextOptions<AppDbContext> options, BaseAuditableEntityInterceptor baseAuditableEntityInterceptor) : base(options) 
+        {
+            _baseAuditableEntityInterceptor = baseAuditableEntityInterceptor;
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.AddInterceptors(_baseAuditableEntityInterceptor);
+            base.OnConfiguring(optionsBuilder);
         }
 
         public DbSet<Car> Cars { get; set; }
