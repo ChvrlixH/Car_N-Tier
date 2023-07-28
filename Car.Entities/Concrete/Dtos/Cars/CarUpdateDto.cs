@@ -11,5 +11,6 @@ namespace RentACar.Entities.Concrete.Dtos.Cars
         public int ModelYear { get; set; }
         public decimal DailyPrice { get; set; }
         public string Description { get; set; }
+        public int Count { get; set; }
     }
 }

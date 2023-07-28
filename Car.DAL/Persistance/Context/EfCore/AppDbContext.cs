@@ -22,6 +22,7 @@ namespace RentACar.DAL.Persistance.Context.EfCore
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.AddInterceptors(_baseAuditableEntityInterceptor);
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-0ETCTHF\MSSQLSERVER01;Database=RentACar;Trusted_Connection=true;");
             base.OnConfiguring(optionsBuilder);
         }
 

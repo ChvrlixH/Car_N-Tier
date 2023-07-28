@@ -72,3 +72,9 @@ C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\obj\Debug\net6.0\refint\WebAPI
 C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\obj\Debug\net6.0\WebAPI.pdb
 C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\obj\Debug\net6.0\WebAPI.genruntimeconfig.cache
 C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\obj\Debug\net6.0\ref\WebAPI.dll
+C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\bin\Debug\net6.0\RentACar.Business.dll
+C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\bin\Debug\net6.0\RentACar.Business.pdb
+C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Asus\source\repos\Car-MiniProject\WebAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

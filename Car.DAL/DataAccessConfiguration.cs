@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RentACar.DAL.Abstract;
+using RentACar.DAL.Concrete;
 using RentACar.DAL.Persistance.Context.EfCore;
 using RentACar.DAL.Persistance.Interceptors;
 
@@ -13,7 +15,8 @@ namespace RentACar.DAL
             services.AddDbContext<AppDbContext>(opt =>
             opt.UseSqlServer(configuration.GetConnectionString("Default")));
             services.AddScoped<BaseAuditableEntityInterceptor>();
-            return services;
+            services.AddScoped<ICarRepository, CarRepository>();
+            return services;    
         }
     }
 }

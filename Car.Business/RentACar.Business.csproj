@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Car.DAL\RentACar.DAL.csproj" />
+    <ProjectReference Include="..\Car.Entities\RentACar.Entities.csproj" />
+  </ItemGroup>
+
 </Project>

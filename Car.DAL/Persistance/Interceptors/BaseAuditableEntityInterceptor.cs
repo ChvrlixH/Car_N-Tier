@@ -29,12 +29,14 @@ namespace RentACar.DAL.Persistance.Interceptors
             {
                 if (entry.State == EntityState.Added)
                 {
-                    entry.Entity.CreatedBy = _httpContextAccessor.HttpContext.User.Identity.Name;
+                    //entry.Entity.CreatedBy = _httpContextAccessor.HttpContext.User.Identity.Name;
+                    entry.Entity.CreatedBy = "Huseyn Ahadzada";
                     entry.Entity.CreatedAt = DateTime.Now;
                 }
                 else if (entry.State == EntityState.Modified)
                 {
-                    entry.Entity.ModifiedBy = _httpContextAccessor.HttpContext.User.Identity.Name;
+                    //entry.Entity.ModifiedBy = _httpContextAccessor.HttpContext.User.Identity.Name;
+                    entry.Entity.ModifiedBy = "Tural Javadzade";
                     entry.Entity.ModifiedAt = DateTime.Now;
                 }
             }
