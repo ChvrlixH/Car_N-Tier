@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4x5XSMFg73oZ3O+coiUo6InahePzRnsykBUaTE1zSpIx/eZQTmQqTFX735HlLzvGKmRL8QLVSCym6I2TBPk+5A==",
+  "dgSpecHash": "zdfDc77DlSfuPZG6oxoYgN5VbkYRTvwyTHof0JHKsGINI6dMtkyBFTjU7sDGQl7NEdOqHfvWrO3npsVd7NbPQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\source\\repos\\Car-MiniProject\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

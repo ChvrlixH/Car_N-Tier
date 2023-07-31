@@ -1,7 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RentACar.Business.Abstract;
-using RentACar.Entities.Concrete;
 using RentACar.Entities.Concrete.Dtos.Cars;
 
 namespace WebAPI.Controllers
@@ -31,19 +29,7 @@ namespace WebAPI.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> Add(CarCreateDto carCreateDto)
         {
-            Car car = new Car
-            {
-                Name = carCreateDto.Name,
-                BrandId= carCreateDto.BrandId,
-                ColorId = carCreateDto.ColorId,
-                ModelYear= carCreateDto.ModelYear,
-                DailyPrice=carCreateDto.DailyPrice,
-                Description=carCreateDto.Description,   
-                IsDeleted = false,
-                Count = carCreateDto.Count
-
-            };
-            await _carService.Add(car);
+            await _carService.Add(carCreateDto);
             return Ok();
         }
 

@@ -8,7 +8,7 @@ namespace RentACar.Entities.Concrete
         {
             CarImages = new List<CarImage>();
         }
-        public string Name { get; set; }
+        public string Name { get; set; } = default!;
         public int BrandId { get; set; }
         public int ColorId { get; set; }
         public bool IsDeleted { get; set; }

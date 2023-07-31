@@ -1,20 +1,16 @@
 ﻿using RentACar.Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RentACar.Entities.Concrete.Dtos.Cars;
 
 namespace RentACar.Business.Abstract
 {
     public interface ICarService
     {
-        Task<List<Car>> GetAll();
-        Task<Car> GetById(int id);
-        Task Add(Car car);
-        Task Update(Car car);
+        Task<List<CarGetDto>> GetAll();
+        Task<CarGetDto> GetById(int id);
+        Task Add(CarCreateDto carDto);
+        Task Update(CarUpdateDto carDto);
         Task DeleteById(int id);
-        Task Delete(Car car);
+        Task Delete(Car car);   
         Task<bool> IsExistsById(int id);
     }
 }

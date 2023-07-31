@@ -1,25 +1,24 @@
-﻿using RentACar.Business.Abstract;
+﻿using AutoMapper;
+using RentACar.Business.Abstract;
 using RentACar.DAL.Abstract;
 using RentACar.Entities.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using RentACar.Entities.Concrete.Dtos.Cars;
 
 namespace RentACar.Business.Concrete
 {
     public class CarService : ICarService
     {
         private readonly ICarRepository _carRepository;
-
-        public CarService(ICarRepository carRepository)
+        private readonly IMapper _mapper;
+        public CarService(ICarRepository carRepository, IMapper mapper)
         {
             _carRepository = carRepository;
+            _mapper = mapper;
         }
 
-        public async Task Add(Car car)
+        public async Task Add(CarCreateDto carDto)
         {
+            Car car = _mapper.Map<Car>(carDto);
             if (car is not null)
             {
                 await _carRepository.AddAsync(car);
@@ -36,21 +35,24 @@ namespace RentACar.Business.Concrete
 
         public async Task DeleteById(int id)
         {
-            Car car = await GetById(id);
+            CarGetDto carDto = await GetById(id);
+            Car car = _mapper.Map<Car>(carDto);
             if (car is not null)
             {
                 await _carRepository.DeleteAsync(car);
             }
         }
 
-        public async Task<List<Car>> GetAll()
+        public async Task<List<CarGetDto>> GetAll()
         {
-            return await _carRepository.GetAllAsync(includes: new string[] { "Brand", "Color" });
+            var cars = await _carRepository.GetAllAsync(includes: new string[] { "Brand", "Color" });
+            return _mapper.Map<List<CarGetDto>>(cars);
         }
 
-        public async Task<Car> GetById(int id)
+        public async Task<CarGetDto> GetById(int id)
         {
-            return await _carRepository.GetAsync(c => c.Id == id, new string[] { "Brand", "Color" });
+            Car car = await _carRepository.GetAsync(c => c.Id == id, includes: new string[] { "Brand", "Color" });
+            return _mapper.Map<CarGetDto>(car);
         }
 
         public async Task<bool> IsExistsById(int id)
@@ -58,10 +60,12 @@ namespace RentACar.Business.Concrete
            return await _carRepository.IsExistsAsync(c => c.Id == id);
         }
 
-        public async Task Update(Car car)
+        public async Task Update(CarUpdateDto carDto)
         {
-            if (car is not null)
+            Car existsCar = await _carRepository.GetAsync(c => c.Id == carDto.Id);
+            if (existsCar is not null)
             {
+                Car car = _mapper.Map(carDto, existsCar);
                 await _carRepository.UpdateAsync(car);
             }
         }
