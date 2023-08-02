@@ -1,3 +1,4 @@
+using FluentValidation.AspNetCore;
 using RentACar.Business;
 using RentACar.DAL;
 namespace WebAPI;
@@ -15,6 +16,7 @@ public class Program
 );
         builder.Services.AddDataAccessServices(builder.Configuration);
         builder.Services.AddBusinessServices();
+        builder.Services.AddFluentValidationAutoValidation(x => x.DisableDataAnnotationsValidation = true).AddFluentValidationClientsideAdapters();
 
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

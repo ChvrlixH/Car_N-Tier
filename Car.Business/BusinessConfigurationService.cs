@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 using RentACar.Business.Abstract;
 using RentACar.Business.Concrete;
 using System.Reflection;
@@ -10,6 +11,7 @@ namespace RentACar.Business
         {
             service.AddScoped<ICarService, CarService>();
             service.AddAutoMapper(Assembly.GetExecutingAssembly());
+            service.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return service;
         }
     }

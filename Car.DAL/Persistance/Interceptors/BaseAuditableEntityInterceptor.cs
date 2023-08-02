@@ -11,17 +11,17 @@ namespace RentACar.DAL.Persistance.Interceptors
         {
             _httpContextAccessor = httpContextAccessor;
         }
-        public override int SavedChanges(SaveChangesCompletedEventData eventData, int result)
-        {
-            UpdateEntity(eventData.Context);
-            return base.SavedChanges(eventData, result);
-        }
-        public override ValueTask<int> SavedChangesAsync(SaveChangesCompletedEventData eventData, int result, CancellationToken cancellationToken = default)
-        {
-            UpdateEntity(eventData.Context);
-            return base.SavedChangesAsync(eventData, result, cancellationToken);
-        }
 
+        public override InterceptionResult<int> SavingChanges(DbContextEventData eventData, InterceptionResult<int> result)
+        {
+            UpdateEntity(eventData.Context);
+            return base.SavingChanges(eventData, result);
+        }
+        public override ValueTask<InterceptionResult<int>> SavingChangesAsync(DbContextEventData eventData, InterceptionResult<int> result, CancellationToken cancellationToken = default)
+        {
+            UpdateEntity(eventData.Context);
+            return base.SavingChangesAsync(eventData, result, cancellationToken);
+        }
         void UpdateEntity(DbContext context)
         {
             if (context == null) return;
@@ -29,14 +29,12 @@ namespace RentACar.DAL.Persistance.Interceptors
             {
                 if (entry.State == EntityState.Added)
                 {
-                    //entry.Entity.CreatedBy = _httpContextAccessor.HttpContext.User.Identity.Name;
-                    entry.Entity.CreatedBy = "Huseyn Ahadzada";
+                    entry.Entity.CreatedBy = _httpContextAccessor.HttpContext.User.Identity.Name;
                     entry.Entity.CreatedAt = DateTime.Now;
                 }
                 else if (entry.State == EntityState.Modified)
                 {
-                    //entry.Entity.ModifiedBy = _httpContextAccessor.HttpContext.User.Identity.Name;
-                    entry.Entity.ModifiedBy = "Tural Javadzade";
+                    entry.Entity.ModifiedBy = _httpContextAccessor.HttpContext.User.Identity.Name;
                     entry.Entity.ModifiedAt = DateTime.Now;
                 }
             }

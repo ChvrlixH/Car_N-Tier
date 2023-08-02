@@ -19,7 +19,7 @@ namespace WebAPI.Controllers
         public async Task<IActionResult> GetAll()
         {
             var result = await _carService.GetAll();
-            if (result.Count > 0)
+            if (result.Success)
             {
                 return Ok(result);
             }
@@ -29,8 +29,23 @@ namespace WebAPI.Controllers
         [HttpPost("Add")]
         public async Task<IActionResult> Add(CarCreateDto carCreateDto)
         {
-            await _carService.Add(carCreateDto);
-            return Ok();
+            var result = await _carService.Add(carCreateDto);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPut("Update")]
+        public async Task<IActionResult> Update(CarUpdateDto carUpdateDto)
+        {
+           var result = await _carService.Update(carUpdateDto);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
         }
 
     }
